@@ -1,0 +1,496 @@
+@import "normalize";
+@import "vars";
+@import "fonts";
+@import "mixins";
+@import "extends";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  height: 100%;
+}
+.header {
+  @include media;
+  height: 86vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url(../img/header-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  padding-top: 11%;
+  padding-bottom: 5%;
+  position: relative;
+  @media screen and (max-width: $sm) {
+    padding-top: 24%;
+  }
+  &__title {
+    font-family: "Josefin bold";
+    font-size: 48px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0 0 4px 0;
+  }
+  &__subtitle {
+    font-family: "Josefin regular";
+    font-size: 22px;
+    color: #fff;
+    letter-spacing: 5px;
+    margin-bottom: 50px;
+    text-align: center;
+  }
+  &__scroll-link {
+    font-family: "Josefin regular";
+    font-size: 14px;
+    color: #fff;
+  }
+}
+.form {
+  display: flex;
+  max-width: 650px;
+  width: 60%;
+  border: 2px solid #fff;
+  background-color: #fff;
+  margin-bottom: 115px;
+  @media screen and (max-width: $lg) {
+    width: 90%;
+  }
+  @media screen and (max-width: $sm) {
+    flex-direction: column;
+    align-items: center;
+    background: transparent;
+    border: none;
+  }
+  input {
+    font-family: "Josefin regular", sans-serif;
+    font-size: 14px;
+    flex-grow: 1;
+    text-align: center;
+    border: none;
+    outline: none;
+    overflow: hidden;
+    &::placeholder {
+      font-family: "Josefin regular", sans-serif;
+      font-size: 14px;
+      color: $input-clr;
+    }
+    @media screen and (max-width: $sm) {
+      height: 40px;
+      width: 100%;
+      margin-bottom: 5%;
+    }
+  }
+
+  &__btn {
+    @include btn;
+    background-image: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 55px;
+    width: 145px;
+    background-image: url(../img/sprite.svg#search);
+    background-position: 50% 50%;
+    background-size: cover;
+    @media screen and (max-width: $sm) {
+      height: 35px;
+    }
+  }
+  &__search-icon {
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+    fill: #fff;
+  }
+}
+.arrow {
+  height: 20px;
+  width: 20px;
+  fill: #fff;
+}
+.nav {
+  @include media;
+  position: relative;
+  height: 14vh;
+  width: 100%;
+  background-color: $blue;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  #burg,
+  .burg-img {
+    display: none;
+  }
+  .burg-img {
+    height: 2px;
+    width: 35px;
+    background-color: #fff;
+    position: absolute;
+    right: 42px;
+    top: 50%;
+    transition: transform 0.5s;
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      top: 10px;
+      width: 35px;
+      height: 2px;
+      background-color: #fff;
+    }
+    &::before {
+      top: -10px;
+    }
+    @media screen and (max-width: $md) {
+      display: block;
+    }
+  }
+  #burg:checked + .burg-img {
+    transform: rotateZ(45deg);
+  }
+  #burg:checked + .burg-img::before {
+    transform: rotateZ(90deg);
+    top: 0;
+  }
+  #burg:checked + .burg-img::after {
+    display: none;
+  }
+  #burg:checked ~ .nav__list {
+    right: 0;
+    bottom: 100%;
+    height: 250px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    transform: scaleY(1);
+  }
+  #burg:checked ~ .nav__list > .nav__item {
+    opacity: 1;
+  }
+  @media screen and (max-width: $md) {
+    #burg:not(:checked) ~ .nav__list {
+      transform: scaleY(0);
+    }
+  }
+  #burg:checked ~ .nav__list a {
+    display: inline-block;
+    height: 42px;
+  }
+  &__logo {
+    font-family: "Josefin bold";
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #fff;
+  }
+  &__list {
+    width: 45%;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    transition: all 0.4s;
+    @media screen and (max-width: $lg) {
+      width: 67%;
+    }
+    @media screen and (max-width: $md) {
+      width: 100%;
+      transform: scaleY(0);
+      transform-origin: 0 100%;
+      position: absolute;
+      right: 0;
+      bottom: 100%;
+      flex-direction: column;
+      background-color: rgba($color: $dark, $alpha: 0.95);
+      text-align: center;
+    }
+  }
+  &__item {
+    transition: opacity 0.4s;
+    position: relative;
+    @media screen and (max-width: $md) {
+      margin-bottom: 10px;
+      opacity: 0;
+      &::after {
+        content: "";
+        display: block;
+        width: 40px;
+        height: 1px;
+        background-color: #a08f8f;
+        position: absolute;
+        bottom: 19px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+  &__item a {
+    font-family: "Aleo regular";
+    font-size: 14px;
+    color: #fff;
+    text-transform: uppercase;
+  }
+}
+
+.choose {
+  @include media;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background: url(../img/choose_us-bg.jpg) 35% 50% no-repeat;
+  background-size: cover;
+  padding-top: 10%;
+  padding-bottom: 10%;
+  @media screen and (max-width: $md) {
+    flex-direction: column;
+  }
+  &__block-content {
+    flex-basis: 48%;
+    padding-top: 4%;
+  }
+  &__block-img {
+    flex-basis: 48%;
+    display: flex;
+    flex-direction: column;
+    @media screen and (max-width: $md) {
+      align-items: center;
+    }
+    img:first-child {
+      align-self: flex-start;
+      margin-bottom: 5px;
+      @media screen and (max-width: $md) {
+        align-self: unset;
+        margin-bottom: 5%;
+        width: 100%;
+      }
+    }
+    img:last-child {
+      align-self: flex-end;
+      @media screen and (max-width: $md) {
+        align-self: unset;
+        width: 100%;
+      }
+    }
+  }
+}
+.block-content {
+  @media screen and (max-width: $md) {
+    text-align: center;
+    margin-bottom: 5%;
+  }
+  &__title {
+    font-family: "Aleo regular", serif;
+    font-size: 36px;
+    color: #fff;
+    font-weight: 400;
+    margin-bottom: 60px;
+  }
+  &__text {
+    @include textStyle;
+    margin-bottom: 35px;
+  }
+  &__btn {
+    @include btn;
+    width: 222px;
+    height: 55px;
+    margin-top: 10px;
+  }
+}
+.user-actions {
+  padding-right: calc(50vw - 465px);
+  padding-left: calc(50vw - 465px);
+  position: relative;
+  background-color: $dark;
+  background-image: url(../img/dashed.png);
+  background-position: 49% 24%;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 338px;
+  @media screen and (max-width: $lg) {
+    padding-right: calc(50vw - 410px);
+    padding-left: calc(50vw - 410px);
+    background-image: none;
+  }
+  @media screen and (max-width: $md) {
+    flex-direction: column;
+    height: auto;
+    padding-top: 3%;
+    padding-bottom: 3%;
+  }
+}
+.user-action {
+  display: flex;
+  position: relative;
+  z-index: 2;
+  flex-direction: column;
+  align-items: center;
+  background-color: $dark;
+  @media screen and (max-width: $lg) {
+    margin-bottom: 3%;
+  }
+  &__icon {
+    width: 62px;
+    height: 62px;
+    margin-bottom: 25px;
+  }
+  &__icon_darkblue {
+    fill: $blue;
+  }
+  &__icon_red {
+    fill: #ff6363;
+  }
+  &__icon_blue {
+    fill: #00a2ff;
+  }
+  &__title {
+    font-family: "Aleo regular", serif;
+    font-size: 36px;
+    color: #fff;
+    font-weight: 400;
+  }
+}
+.booking {
+  @include media;
+  padding-top: 20%;
+  padding-bottom: 10%;
+}
+.booking_theme_home {
+  background: url(../img/spain-bg-1.jpg) 50% 50% no-repeat;
+  background-size: cover;
+}
+.booking_theme_mountain {
+  background: url(../img/spain-bg-2.jpg) 50% 50% no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: flex-end;
+}
+.booking-content {
+  background-color: rgba($color: $dark, $alpha: 0.8);
+  width: 49%;
+  padding: 45px 25px;
+  @media screen and (max-width: $lg) {
+    width: 100%;
+    text-align: center;
+  }
+  &__suptitle {
+    font-family: "Josefin regular", sans-serif;
+    font-size: 20px;
+    color: $text-clr;
+  }
+  &__title {
+    font-family: "Josefin regular", sans-serif;
+    font-size: 20px;
+    color: $text-clr;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin: 25px 0 25px 0;
+  }
+  &__text {
+    @include textStyle;
+    margin-bottom: 45px;
+  }
+  &__btn {
+    @include btn;
+    width: 225px;
+    height: 60px;
+  }
+}
+
+.tourist-block {
+  @include media;
+  background: url(../img/tourist-say-bg.jpg) 50% 50% no-repeat;
+  background-size: cover;
+  padding-top: 6%;
+  padding-bottom: 10%;
+  &__title {
+    font-family: "Aleo regular", serif;
+    font-size: 36px;
+    color: #fff;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 5%;
+  }
+}
+.tourist-info {
+  width: 100%;
+  display: flex;
+  @media screen and (max-width: $lg) {
+    flex-direction: column;
+  }
+  &__img {
+    max-width: 100%;
+  }
+  &__opinion {
+    background-color: $dark;
+    padding: 45px 55px;
+  }
+  &__name {
+    font-family: "Josefin regular", sans-serif;
+    font-size: 20px;
+    color: $text-clr;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+  }
+  &__quote {
+    @include textStyle;
+    position: relative;
+    text-indent: 30px;
+    // span {
+    //   font-size: 32px;
+    //   font-weight: 800;
+    //   color: $blue;
+    //   float: left;
+    // }
+    &:before {
+      content: "\1F676";
+      font-size: 50px;
+      color: $blue;
+      display: block;
+      position: absolute;
+      top: -24px;
+      left: -33px;
+      float: left;
+    }
+  }
+}
+.footer {
+  background-color: $dark;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 7% 0 3% 0;
+  &__logo {
+    font-family: "Josefin bold";
+    font-size: 24px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #fff;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+  }
+  &__subtitle {
+    @include textStyle;
+    margin-bottom: 20px;
+  }
+  &__social-icons {
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__social-icons svg {
+    width: 15px;
+    height: 15px;
+    fill: #fff;
+    &:hover {
+      fill: $blue;
+    }
+  }
+}

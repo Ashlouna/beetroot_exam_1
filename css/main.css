@@ -1,0 +1,1374 @@
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+/* Document
+   ========================================================================== */
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+html {
+  line-height: 1.15;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+}
+
+/* Sections
+   ========================================================================== */
+/**
+ * Remove the margin in all browsers.
+ */
+body {
+  margin: 0;
+}
+
+/**
+ * Render the `main` element consistently in IE.
+ */
+main {
+  display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+hr {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+pre {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+a {
+  background-color: transparent;
+  text-decoration: none;
+  color: initial;
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+  /* 2 */
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+img {
+  border-style: none;
+}
+
+/* Forms
+   ========================================================================== */
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button,
+input {
+  /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button,
+select {
+  /* 1 */
+  text-transform: none;
+}
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Correct the padding in Firefox.
+ */
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+legend {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+progress {
+  vertical-align: baseline;
+}
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+textarea {
+  overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+[type="checkbox"],
+[type="radio"] {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+}
+
+/* Interactive
+   ========================================================================== */
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+details {
+  display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+summary {
+  display: list-item;
+}
+
+/* Misc
+   ========================================================================== */
+/**
+ * Add the correct display in IE 10+.
+ */
+template {
+  display: none;
+}
+
+/**
+ * Add the correct display in IE 10.
+ */
+[hidden] {
+  display: none;
+}
+
+@font-face {
+  font-family: "Josefin bold";
+  src: url(../fonts/JosefinSans-Bold.ttf);
+}
+
+@font-face {
+  font-family: "Josefin regular";
+  src: url(../fonts/JosefinSans-Regular.ttf);
+}
+
+@font-face {
+  font-family: "Aleo regular";
+  src: url(../fonts/Aleo-Regular.ttf);
+}
+
+@font-face {
+  font-family: "Josefin bold";
+  src: url(../fonts/JosefinSans-Bold.ttf);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  height: 100%;
+}
+
+.header {
+  padding-left: calc(50vw - 555px);
+  padding-right: calc(50vw - 555px);
+  height: 86vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-image: url(../img/header-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  padding-top: 11%;
+  padding-bottom: 5%;
+  position: relative;
+}
+
+@media screen and (max-width: 1400px) {
+  .header {
+    padding-left: calc(50vw - 555px);
+    padding-right: calc(50vw - 555px);
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .header {
+    padding-left: calc(50vw - 470px);
+    padding-right: calc(50vw - 470px);
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .header {
+    padding-left: calc(50vw - 350px);
+    padding-right: calc(50vw - 350px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    padding-left: calc(50vw - 240px);
+    padding-right: calc(50vw - 240px);
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .header {
+    padding-left: calc(50vw - 190px);
+    padding-right: calc(50vw - 190px);
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .header {
+    padding-left: calc(50vw - 150px);
+    padding-right: calc(50vw - 150px);
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .header {
+    padding-top: 24%;
+  }
+}
+
+.header__title {
+  font-family: "Josefin bold";
+  font-size: 48px;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0 0 4px 0;
+}
+
+.header__subtitle {
+  font-family: "Josefin regular";
+  font-size: 22px;
+  color: #fff;
+  letter-spacing: 5px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.header__scroll-link {
+  font-family: "Josefin regular";
+  font-size: 14px;
+  color: #fff;
+}
+
+.form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 650px;
+  width: 60%;
+  border: 2px solid #fff;
+  background-color: #fff;
+  margin-bottom: 115px;
+}
+
+@media screen and (max-width: 992px) {
+  .form {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .form {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background: transparent;
+    border: none;
+  }
+}
+
+.form input {
+  font-family: "Josefin regular", sans-serif;
+  font-size: 14px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  text-align: center;
+  border: none;
+  outline: none;
+  overflow: hidden;
+}
+
+.form input::-webkit-input-placeholder {
+  font-family: "Josefin regular", sans-serif;
+  font-size: 14px;
+  color: #999999;
+}
+
+.form input:-ms-input-placeholder {
+  font-family: "Josefin regular", sans-serif;
+  font-size: 14px;
+  color: #999999;
+}
+
+.form input::-ms-input-placeholder {
+  font-family: "Josefin regular", sans-serif;
+  font-size: 14px;
+  color: #999999;
+}
+
+.form input::placeholder {
+  font-family: "Josefin regular", sans-serif;
+  font-size: 14px;
+  color: #999999;
+}
+
+@media screen and (max-width: 576px) {
+  .form input {
+    height: 40px;
+    width: 100%;
+    margin-bottom: 5%;
+  }
+}
+
+.form__btn {
+  font-family: "Aleo regular";
+  text-transform: uppercase;
+  background-color: #5474fd;
+  background-image: url(../img/button-bg.png);
+  background-image: 0 0;
+  background-repeat: no-repeat;
+  outline: none;
+  border: none;
+  color: #fff;
+  -webkit-transition: -webkit-transform 0.2s, -webkit-box-shadow 0.2s;
+  transition: -webkit-transform 0.2s, -webkit-box-shadow 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s, -webkit-transform 0.2s, -webkit-box-shadow 0.2s;
+  background-image: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 55px;
+  width: 145px;
+  background-image: url(../img/sprite.svg#search);
+  background-position: 50% 50%;
+  background-size: cover;
+}
+
+.form__btn:active {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+  -webkit-box-shadow: 0 0 10px 0 #000 inset;
+          box-shadow: 0 0 10px 0 #000 inset;
+}
+
+@media screen and (max-width: 576px) {
+  .form__btn {
+    height: 35px;
+  }
+}
+
+.form__search-icon {
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  fill: #fff;
+}
+
+.arrow {
+  height: 20px;
+  width: 20px;
+  fill: #fff;
+}
+
+.nav {
+  padding-left: calc(50vw - 555px);
+  padding-right: calc(50vw - 555px);
+  position: relative;
+  height: 14vh;
+  width: 100%;
+  background-color: #5474fd;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media screen and (max-width: 1400px) {
+  .nav {
+    padding-left: calc(50vw - 555px);
+    padding-right: calc(50vw - 555px);
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .nav {
+    padding-left: calc(50vw - 470px);
+    padding-right: calc(50vw - 470px);
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .nav {
+    padding-left: calc(50vw - 350px);
+    padding-right: calc(50vw - 350px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .nav {
+    padding-left: calc(50vw - 240px);
+    padding-right: calc(50vw - 240px);
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .nav {
+    padding-left: calc(50vw - 190px);
+    padding-right: calc(50vw - 190px);
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .nav {
+    padding-left: calc(50vw - 150px);
+    padding-right: calc(50vw - 150px);
+  }
+}
+
+.nav #burg,
+.nav .burg-img {
+  display: none;
+}
+
+.nav .burg-img {
+  height: 2px;
+  width: 35px;
+  background-color: #fff;
+  position: absolute;
+  right: 42px;
+  top: 50%;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+}
+
+.nav .burg-img::after, .nav .burg-img::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  width: 35px;
+  height: 2px;
+  background-color: #fff;
+}
+
+.nav .burg-img::before {
+  top: -10px;
+}
+
+@media screen and (max-width: 768px) {
+  .nav .burg-img {
+    display: block;
+  }
+}
+
+.nav #burg:checked + .burg-img {
+  -webkit-transform: rotateZ(45deg);
+          transform: rotateZ(45deg);
+}
+
+.nav #burg:checked + .burg-img::before {
+  -webkit-transform: rotateZ(90deg);
+          transform: rotateZ(90deg);
+  top: 0;
+}
+
+.nav #burg:checked + .burg-img::after {
+  display: none;
+}
+
+.nav #burg:checked ~ .nav__list {
+  right: 0;
+  bottom: 100%;
+  height: 250px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
+}
+
+.nav #burg:checked ~ .nav__list > .nav__item {
+  opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+  .nav #burg:not(:checked) ~ .nav__list {
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0);
+  }
+}
+
+.nav #burg:checked ~ .nav__list a {
+  display: inline-block;
+  height: 42px;
+}
+
+.nav__logo {
+  font-family: "Josefin bold";
+  font-size: 24px;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.nav__list {
+  width: 45%;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+@media screen and (max-width: 992px) {
+  .nav__list {
+    width: 67%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .nav__list {
+    width: 100%;
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0);
+    -webkit-transform-origin: 0 100%;
+            transform-origin: 0 100%;
+    position: absolute;
+    right: 0;
+    bottom: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    background-color: rgba(35, 35, 35, 0.95);
+    text-align: center;
+  }
+}
+
+.nav__item {
+  -webkit-transition: opacity 0.4s;
+  transition: opacity 0.4s;
+  position: relative;
+}
+
+@media screen and (max-width: 768px) {
+  .nav__item {
+    margin-bottom: 10px;
+    opacity: 0;
+  }
+  .nav__item::after {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 1px;
+    background-color: #a08f8f;
+    position: absolute;
+    bottom: 19px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+}
+
+.nav__item a {
+  font-family: "Aleo regular";
+  font-size: 14px;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.choose {
+  padding-left: calc(50vw - 555px);
+  padding-right: calc(50vw - 555px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  background: url(../img/choose_us-bg.jpg) 35% 50% no-repeat;
+  background-size: cover;
+  padding-top: 10%;
+  padding-bottom: 10%;
+}
+
+@media screen and (max-width: 1400px) {
+  .choose {
+    padding-left: calc(50vw - 555px);
+    padding-right: calc(50vw - 555px);
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .choose {
+    padding-left: calc(50vw - 470px);
+    padding-right: calc(50vw - 470px);
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .choose {
+    padding-left: calc(50vw - 350px);
+    padding-right: calc(50vw - 350px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .choose {
+    padding-left: calc(50vw - 240px);
+    padding-right: calc(50vw - 240px);
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .choose {
+    padding-left: calc(50vw - 190px);
+    padding-right: calc(50vw - 190px);
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .choose {
+    padding-left: calc(50vw - 150px);
+    padding-right: calc(50vw - 150px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .choose {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.choose__block-content {
+  -ms-flex-preferred-size: 48%;
+      flex-basis: 48%;
+  padding-top: 4%;
+}
+
+.choose__block-img {
+  -ms-flex-preferred-size: 48%;
+      flex-basis: 48%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media screen and (max-width: 768px) {
+  .choose__block-img {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.choose__block-img img:first-child {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  margin-bottom: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  .choose__block-img img:first-child {
+    -ms-flex-item-align: unset;
+        -ms-grid-row-align: unset;
+        align-self: unset;
+    margin-bottom: 5%;
+    width: 100%;
+  }
+}
+
+.choose__block-img img:last-child {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+@media screen and (max-width: 768px) {
+  .choose__block-img img:last-child {
+    -ms-flex-item-align: unset;
+        -ms-grid-row-align: unset;
+        align-self: unset;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .block-content {
+    text-align: center;
+    margin-bottom: 5%;
+  }
+}
+
+.block-content__title {
+  font-family: "Aleo regular", serif;
+  font-size: 36px;
+  color: #fff;
+  font-weight: 400;
+  margin-bottom: 60px;
+}
+
+.block-content__text {
+  font-family: "Josefin regular", sans-serif;
+  font-size: 16px;
+  color: #d0d0d0;
+  line-height: 1.5;
+  margin-bottom: 35px;
+}
+
+.block-content__btn {
+  font-family: "Aleo regular";
+  text-transform: uppercase;
+  background-color: #5474fd;
+  background-image: url(../img/button-bg.png);
+  background-image: 0 0;
+  background-repeat: no-repeat;
+  outline: none;
+  border: none;
+  color: #fff;
+  -webkit-transition: -webkit-transform 0.2s, -webkit-box-shadow 0.2s;
+  transition: -webkit-transform 0.2s, -webkit-box-shadow 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s, -webkit-transform 0.2s, -webkit-box-shadow 0.2s;
+  width: 222px;
+  height: 55px;
+  margin-top: 10px;
+}
+
+.block-content__btn:active {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+  -webkit-box-shadow: 0 0 10px 0 #000 inset;
+          box-shadow: 0 0 10px 0 #000 inset;
+}
+
+.user-actions {
+  padding-right: calc(50vw - 465px);
+  padding-left: calc(50vw - 465px);
+  position: relative;
+  background-color: #232323;
+  background-image: url(../img/dashed.png);
+  background-position: 49% 24%;
+  background-repeat: no-repeat;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 338px;
+}
+
+@media screen and (max-width: 992px) {
+  .user-actions {
+    padding-right: calc(50vw - 410px);
+    padding-left: calc(50vw - 410px);
+    background-image: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .user-actions {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: auto;
+    padding-top: 3%;
+    padding-bottom: 3%;
+  }
+}
+
+.user-action {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  z-index: 2;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #232323;
+}
+
+@media screen and (max-width: 992px) {
+  .user-action {
+    margin-bottom: 3%;
+  }
+}
+
+.user-action__icon {
+  width: 62px;
+  height: 62px;
+  margin-bottom: 25px;
+}
+
+.user-action__icon_darkblue {
+  fill: #5474fd;
+}
+
+.user-action__icon_red {
+  fill: #ff6363;
+}
+
+.user-action__icon_blue {
+  fill: #00a2ff;
+}
+
+.user-action__title {
+  font-family: "Aleo regular", serif;
+  font-size: 36px;
+  color: #fff;
+  font-weight: 400;
+}
+
+.booking {
+  padding-left: calc(50vw - 555px);
+  padding-right: calc(50vw - 555px);
+  padding-top: 20%;
+  padding-bottom: 10%;
+}
+
+@media screen and (max-width: 1400px) {
+  .booking {
+    padding-left: calc(50vw - 555px);
+    padding-right: calc(50vw - 555px);
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .booking {
+    padding-left: calc(50vw - 470px);
+    padding-right: calc(50vw - 470px);
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .booking {
+    padding-left: calc(50vw - 350px);
+    padding-right: calc(50vw - 350px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .booking {
+    padding-left: calc(50vw - 240px);
+    padding-right: calc(50vw - 240px);
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .booking {
+    padding-left: calc(50vw - 190px);
+    padding-right: calc(50vw - 190px);
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .booking {
+    padding-left: calc(50vw - 150px);
+    padding-right: calc(50vw - 150px);
+  }
+}
+
+.booking_theme_home {
+  background: url(../img/spain-bg-1.jpg) 50% 50% no-repeat;
+  background-size: cover;
+}
+
+.booking_theme_mountain {
+  background: url(../img/spain-bg-2.jpg) 50% 50% no-repeat;
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.booking-content {
+  background-color: rgba(35, 35, 35, 0.8);
+  width: 49%;
+  padding: 45px 25px;
+}
+
+@media screen and (max-width: 992px) {
+  .booking-content {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.booking-content__suptitle {
+  font-family: "Josefin regular", sans-serif;
+  font-size: 20px;
+  color: #e8e8e8;
+}
+
+.booking-content__title {
+  font-family: "Josefin regular", sans-serif;
+  font-size: 20px;
+  color: #e8e8e8;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin: 25px 0 25px 0;
+}
+
+.booking-content__text {
+  font-family: "Josefin regular", sans-serif;
+  font-size: 16px;
+  color: #d0d0d0;
+  line-height: 1.5;
+  margin-bottom: 45px;
+}
+
+.booking-content__btn {
+  font-family: "Aleo regular";
+  text-transform: uppercase;
+  background-color: #5474fd;
+  background-image: url(../img/button-bg.png);
+  background-image: 0 0;
+  background-repeat: no-repeat;
+  outline: none;
+  border: none;
+  color: #fff;
+  -webkit-transition: -webkit-transform 0.2s, -webkit-box-shadow 0.2s;
+  transition: -webkit-transform 0.2s, -webkit-box-shadow 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s, -webkit-transform 0.2s, -webkit-box-shadow 0.2s;
+  width: 225px;
+  height: 60px;
+}
+
+.booking-content__btn:active {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+  -webkit-box-shadow: 0 0 10px 0 #000 inset;
+          box-shadow: 0 0 10px 0 #000 inset;
+}
+
+.tourist-block {
+  padding-left: calc(50vw - 555px);
+  padding-right: calc(50vw - 555px);
+  background: url(../img/tourist-say-bg.jpg) 50% 50% no-repeat;
+  background-size: cover;
+  padding-top: 6%;
+  padding-bottom: 10%;
+}
+
+@media screen and (max-width: 1400px) {
+  .tourist-block {
+    padding-left: calc(50vw - 555px);
+    padding-right: calc(50vw - 555px);
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .tourist-block {
+    padding-left: calc(50vw - 470px);
+    padding-right: calc(50vw - 470px);
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .tourist-block {
+    padding-left: calc(50vw - 350px);
+    padding-right: calc(50vw - 350px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .tourist-block {
+    padding-left: calc(50vw - 240px);
+    padding-right: calc(50vw - 240px);
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .tourist-block {
+    padding-left: calc(50vw - 190px);
+    padding-right: calc(50vw - 190px);
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .tourist-block {
+    padding-left: calc(50vw - 150px);
+    padding-right: calc(50vw - 150px);
+  }
+}
+
+.tourist-block__title {
+  font-family: "Aleo regular", serif;
+  font-size: 36px;
+  color: #fff;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 5%;
+}
+
+.tourist-info {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media screen and (max-width: 992px) {
+  .tourist-info {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.tourist-info__img {
+  max-width: 100%;
+}
+
+.tourist-info__opinion {
+  background-color: #232323;
+  padding: 45px 55px;
+}
+
+.tourist-info__name {
+  font-family: "Josefin regular", sans-serif;
+  font-size: 20px;
+  color: #e8e8e8;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+}
+
+.tourist-info__quote {
+  font-family: "Josefin regular", sans-serif;
+  font-size: 16px;
+  color: #d0d0d0;
+  line-height: 1.5;
+  position: relative;
+  text-indent: 30px;
+}
+
+.tourist-info__quote:before {
+  content: "\1F676";
+  font-size: 50px;
+  color: #5474fd;
+  display: block;
+  position: absolute;
+  top: -24px;
+  left: -33px;
+  float: left;
+}
+
+.footer {
+  background-color: #232323;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 7% 0 3% 0;
+}
+
+.footer__logo {
+  font-family: "Josefin bold";
+  font-size: 24px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #fff;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.footer__subtitle {
+  font-family: "Josefin regular", sans-serif;
+  font-size: 16px;
+  color: #d0d0d0;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.footer__social-icons {
+  width: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.footer__social-icons svg {
+  width: 15px;
+  height: 15px;
+  fill: #fff;
+}
+
+.footer__social-icons svg:hover {
+  fill: #5474fd;
+}
+/*# sourceMappingURL=main.css.map */

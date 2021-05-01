@@ -1,0 +1,50 @@
+@mixin media {
+  padding-left: calc(50vw - 555px);
+  padding-right: calc(50vw - 555px);
+  @media screen and (max-width: $xxl) {
+    padding-left: calc(50vw - 555px);
+    padding-right: calc(50vw - 555px);
+  }
+  @media screen and (max-width: $xl) {
+    padding-left: calc(50vw - 470px);
+    padding-right: calc(50vw - 470px);
+  }
+  @media screen and (max-width: $lg) {
+    padding-left: calc(50vw - 350px);
+    padding-right: calc(50vw - 350px);
+  }
+  @media screen and (max-width: $md) {
+    padding-left: calc(50vw - 240px);
+    padding-right: calc(50vw - 240px);
+  }
+  @media screen and (max-width: $sm) {
+    padding-left: calc(50vw - 190px);
+    padding-right: calc(50vw - 190px);
+  }
+  @media screen and (max-width: $xs) {
+    padding-left: calc(50vw - 150px);
+    padding-right: calc(50vw - 150px);
+  }
+}
+@mixin btn {
+  font-family: "Aleo regular";
+  text-transform: uppercase;
+  background-color: $blue;
+  background-image: url(../img/button-bg.png);
+  background-image: 0 0;
+  background-repeat: no-repeat;
+  outline: none;
+  border: none;
+  color: #fff;
+  transition: transform 0.2s, box-shadow 0.2s;
+  &:active {
+    transform: scale(0.95);
+    box-shadow: 0 0 10px 0 #000 inset;
+  }
+}
+@mixin textStyle {
+  font-family: "Josefin regular", sans-serif;
+  font-size: 16px;
+  color: #d0d0d0;
+  line-height: 1.5;
+}

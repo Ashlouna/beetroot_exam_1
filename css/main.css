@@ -376,12 +376,13 @@ html {
 
 body {
   height: 100%;
+  padding: 15px;
 }
 
 .header {
   padding-left: calc(50vw - 555px);
   padding-right: calc(50vw - 555px);
-  height: 86vh;
+  height: calc(86vh - 15px);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -392,13 +393,13 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   background-image: url(../img/header-bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
-  padding-top: 11%;
-  padding-bottom: 5%;
-  position: relative;
 }
 
 @media screen and (max-width: 1400px) {
@@ -443,12 +444,6 @@ body {
   }
 }
 
-@media screen and (max-width: 576px) {
-  .header {
-    padding-top: 24%;
-  }
-}
-
 .header__title {
   font-family: "Josefin bold";
   font-size: 48px;
@@ -458,6 +453,12 @@ body {
   margin: 0 0 4px 0;
 }
 
+@media screen and (max-width: 400px) {
+  .header__title {
+    font-size: 38px;
+  }
+}
+
 .header__subtitle {
   font-family: "Josefin regular";
   font-size: 22px;
@@ -465,6 +466,12 @@ body {
   letter-spacing: 5px;
   margin-bottom: 50px;
   text-align: center;
+}
+
+@media screen and (max-width: 992px) {
+  .header__subtitle {
+    margin-bottom: 5%;
+  }
 }
 
 .header__scroll-link {
@@ -487,6 +494,7 @@ body {
 @media screen and (max-width: 992px) {
   .form {
     width: 90%;
+    margin-bottom: 9%;
   }
 }
 
@@ -544,7 +552,7 @@ body {
   .form input {
     height: 40px;
     width: 100%;
-    margin-bottom: 5%;
+    margin-bottom: 8%;
   }
 }
 
@@ -671,28 +679,46 @@ body {
 }
 
 .nav .burg-img {
-  height: 2px;
-  width: 35px;
-  background-color: #fff;
+  width: 42px;
+  height: 42px;
   position: absolute;
   right: 42px;
   top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+@media screen and (max-width: 400px) {
+  .nav .burg-img {
+    right: 10px;
+  }
+}
+
+.nav .burg-img span {
+  height: 3px;
+  width: 35px;
+  background-color: #fff;
+  position: absolute;
+  top: 44%;
+  left: 3px;
+  border-radius: 3px;
   -webkit-transition: -webkit-transform 0.5s;
   transition: -webkit-transform 0.5s;
   transition: transform 0.5s;
   transition: transform 0.5s, -webkit-transform 0.5s;
 }
 
-.nav .burg-img::after, .nav .burg-img::before {
+.nav .burg-img span::after, .nav .burg-img span::before {
   content: "";
   position: absolute;
   top: 10px;
   width: 35px;
-  height: 2px;
+  height: 3px;
+  border-radius: 3px;
   background-color: #fff;
 }
 
-.nav .burg-img::before {
+.nav .burg-img span::before {
   top: -10px;
 }
 
@@ -702,18 +728,18 @@ body {
   }
 }
 
-.nav #burg:checked + .burg-img {
+.nav #burg:checked + .burg-img > span {
   -webkit-transform: rotateZ(45deg);
           transform: rotateZ(45deg);
 }
 
-.nav #burg:checked + .burg-img::before {
+.nav #burg:checked + .burg-img > span::before {
   -webkit-transform: rotateZ(90deg);
           transform: rotateZ(90deg);
   top: 0;
 }
 
-.nav #burg:checked + .burg-img::after {
+.nav #burg:checked + .burg-img > span::after {
   display: none;
 }
 
@@ -721,21 +747,18 @@ body {
   right: 0;
   bottom: 100%;
   height: 250px;
-  padding-top: 20px;
+  padding-top: 30px;
   padding-bottom: 20px;
   -webkit-transform: scaleY(1);
           transform: scaleY(1);
+  -webkit-transition: width 0.4s, -webkit-transform 0.4s;
+  transition: width 0.4s, -webkit-transform 0.4s;
+  transition: width 0.4s, transform 0.4s;
+  transition: width 0.4s, transform 0.4s, -webkit-transform 0.4s;
 }
 
 .nav #burg:checked ~ .nav__list > .nav__item {
   opacity: 1;
-}
-
-@media screen and (max-width: 768px) {
-  .nav #burg:not(:checked) ~ .nav__list {
-    -webkit-transform: scaleY(0);
-            transform: scaleY(0);
-  }
 }
 
 .nav #burg:checked ~ .nav__list a {
@@ -759,8 +782,12 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-transition: all 0.4s;
-  transition: all 0.4s;
+}
+
+@media screen and (max-width: 1200px) {
+  .nav__list {
+    width: 55%;
+  }
 }
 
 @media screen and (max-width: 992px) {
@@ -778,7 +805,6 @@ body {
             transform-origin: 0 100%;
     position: absolute;
     right: 0;
-    bottom: 100%;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -924,7 +950,7 @@ body {
     -ms-flex-item-align: unset;
         -ms-grid-row-align: unset;
         align-self: unset;
-    margin-bottom: 5%;
+    margin-bottom: 9%;
     width: 100%;
   }
 }
@@ -946,7 +972,7 @@ body {
 @media screen and (max-width: 768px) {
   .block-content {
     text-align: center;
-    margin-bottom: 5%;
+    margin-bottom: 9%;
   }
 }
 
@@ -956,6 +982,12 @@ body {
   color: #fff;
   font-weight: 400;
   margin-bottom: 60px;
+}
+
+@media screen and (max-width: 768px) {
+  .block-content__title {
+    margin-bottom: 9%;
+  }
 }
 
 .block-content__text {
@@ -1020,6 +1052,14 @@ body {
   }
 }
 
+@media screen and (max-width: 992px) and (orientation: landscape) {
+  .user-actions {
+    padding-right: calc(50vw - 350px);
+    padding-left: calc(50vw - 350px);
+    background-image: none;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .user-actions {
     -webkit-box-orient: vertical;
@@ -1027,8 +1067,8 @@ body {
         -ms-flex-direction: column;
             flex-direction: column;
     height: auto;
-    padding-top: 3%;
-    padding-bottom: 3%;
+    padding-top: 7%;
+    padding-bottom: 7%;
   }
 }
 
@@ -1060,6 +1100,13 @@ body {
   margin-bottom: 25px;
 }
 
+@media screen and (max-width: 576px) {
+  .user-action__icon {
+    -webkit-transform: scale(0.7);
+            transform: scale(0.7);
+  }
+}
+
 .user-action__icon_darkblue {
   fill: #5474fd;
 }
@@ -1077,6 +1124,12 @@ body {
   font-size: 36px;
   color: #fff;
   font-weight: 400;
+}
+
+@media screen and (max-width: 576px) {
+  .user-action__title {
+    font-size: 26px;
+  }
 }
 
 .booking {
@@ -1353,7 +1406,7 @@ body {
 }
 
 .footer__social-icons {
-  width: 200px;
+  width: 160px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

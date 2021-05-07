@@ -1,11 +1,37 @@
+//Colors
+$white: #fff;
 $dark: #232323;
 $blue: #5474fd;
+$red-icon: #ff6363;
+$blue-icon: #00a2ff;
 $input-clr: #999999;
-$text-clr: #e8e8e8;
+$input-focus-clr: #042d47;
+$suptitle-clr: #e8e8e8;
+$text-clr: #d0d0d0;
 $block-title-clr: #fefefe;
+$underline-clr: #a08f8f;
+
+//Screen sizes
+
 $xs: 400px;
 $sm: 576px;
 $md: 768px;
 $lg: 992px;
 $xl: 1200px;
 $xxl: 1400px;
+
+//Font families
+
+$josefin-reg: "Josefin regular", sans-serif;
+$josefin-bold: "Josefin bold", sans-serif;
+$aleo-reg: "Aleo regular", serif;
+
+//Font sizes
+
+$menu-item: 14px;
+$p-text: 16px;
+$title-sans: 20px;
+$main-sub-title: 22px;
+$nav-logo: 24px;
+$title-serif: 36px;
+$main-title: 48px;

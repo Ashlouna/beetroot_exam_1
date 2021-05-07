@@ -8,9 +8,7 @@
 }
 @font-face {
   font-family: "Aleo regular";
-  src: url(../fonts/Aleo-Regular.ttf);
-}
-@font-face {
-  font-family: "Josefin bold";
-  src: url(../fonts/JosefinSans-Bold.ttf);
+  src: url(../fonts/aleo-regular-webfont.woff2) format("woff2"),
+    url(../fonts/aleo-regular-webfont.woff) format("woff"),
+    url(../fonts/Aleo-Regular.ttf) format("truetype");
 }

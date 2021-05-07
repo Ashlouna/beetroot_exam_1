@@ -13,54 +13,57 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  height: 100%;
   padding: 15px;
 }
+
+// Header Section
+
 .header {
-  @include media;
+  @extend %media;
+  @extend %flexCol;
+  @extend %flexCentre;
   height: calc(86vh - 15px);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   background-image: url(../img/header-bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
   &__title {
-    font-family: "Josefin bold";
-    font-size: 48px;
-    color: #fff;
+    @include textStyle($josefin-bold, $main-title, $white);
     text-transform: uppercase;
     letter-spacing: 2px;
     margin: 0 0 4px 0;
     @media screen and (max-width: $xs) {
       font-size: 38px;
     }
+    @media screen and (max-width: $sm) and (orientation: landscape) {
+      line-height: 1;
+    }
   }
   &__subtitle {
-    font-family: "Josefin regular";
-    font-size: 22px;
-    color: #fff;
+    @include textStyle($josefin-reg, $main-sub-title, $white);
     letter-spacing: 5px;
-    margin-bottom: 50px;
     text-align: center;
+    margin-bottom: 50px;
     @media screen and (max-width: $lg) {
       margin-bottom: 5%;
     }
+    @media screen and (max-width: $sm) and (orientation: landscape) {
+      margin-bottom: 2%;
+    }
   }
   &__scroll-link {
+    @include textStyle($josefin-reg, $menu-item, $white);
     font-family: "Josefin regular";
     font-size: 14px;
-    color: #fff;
+    color: $white;
   }
 }
 .form {
-  display: flex;
-  max-width: 650px;
   width: 60%;
-  border: 2px solid #fff;
-  background-color: #fff;
+  max-width: 650px;
+  display: flex;
+  border: 2px solid $white;
+  background-color: $white;
   margin-bottom: 115px;
   @media screen and (max-width: $lg) {
     width: 90%;
@@ -72,9 +75,11 @@ body {
     background: transparent;
     border: none;
   }
+  @media screen and (max-width: $sm) and (orientation: landscape) {
+    margin-bottom: 3%;
+  }
   input {
-    font-family: "Josefin regular", sans-serif;
-    font-size: 14px;
+    @include textStyle($josefin-reg, $menu-item, $input-clr);
     flex-grow: 1;
     text-align: center;
     border: none;
@@ -85,24 +90,25 @@ body {
       font-size: 14px;
       color: $input-clr;
     }
+    &:focus {
+      background-color: $input-focus-clr;
+    }
     @media screen and (max-width: $sm) {
-      height: 40px;
       width: 100%;
+      height: 40px;
       margin-bottom: 8%;
+    }
+    @media screen and (max-width: $sm) and (orientation: landscape) {
+      margin-bottom: 3%;
     }
   }
 
   &__btn {
-    @include btn;
-    background-image: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 55px;
+    @extend %btn;
+    @extend %flexCentre;
     width: 145px;
-    background-image: url(../img/sprite.svg#search);
-    background-position: 50% 50%;
-    background-size: cover;
+    height: 55px;
+    background-image: none;
     @media screen and (max-width: $sm) {
       height: 35px;
     }
@@ -111,56 +117,66 @@ body {
     width: 20px;
     height: 20px;
     margin-left: 10px;
-    fill: #fff;
+    fill: $white;
   }
 }
 .arrow {
-  height: 20px;
   width: 20px;
-  fill: #fff;
+  height: 20px;
+  fill: $white;
 }
+
+//Navigation section
+
 .nav {
-  @include media;
+  @extend %media;
+  @extend %flexSpBw;
+  align-items: center;
   position: relative;
   height: 14vh;
-  width: 100%;
   background-color: $blue;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  #burg,
-  .burg-img {
+  .nav__burg,
+  .nav__burg-img {
     display: none;
   }
-  .burg-img {
+  .nav__burg-img {
     width: 42px;
     height: 42px;
     position: absolute;
     right: 42px;
     top: 50%;
     transform: translateY(-50%);
+    cursor: pointer;
     @media screen and (max-width: $xs) {
       right: 10px;
     }
+    @media screen and (max-width: $md) {
+      right: calc(50vw - 240px);
+    }
+    @media screen and (max-width: $sm) {
+      right: calc(50vw - 190px);
+    }
+    @media screen and (max-width: $xs) {
+      right: calc(50vw - 150px);
+    }
 
     span {
-      height: 3px;
       width: 35px;
-      background-color: #fff;
+      height: 3px;
       position: absolute;
       top: 44%;
       left: 3px;
+      background-color: $white;
       border-radius: 3px;
       transition: transform 0.5s;
       &::after,
       &::before {
-        content: "";
-        position: absolute;
-        top: 10px;
+        @include pseudo();
         width: 35px;
         height: 3px;
+        top: 10px;
         border-radius: 3px;
-        background-color: #fff;
+        background-color: $white;
       }
       &::before {
         top: -10px;
@@ -171,17 +187,17 @@ body {
       display: block;
     }
   }
-  #burg:checked + .burg-img > span {
+  .nav__burg:checked + .nav__burg-img > span {
     transform: rotateZ(45deg);
   }
-  #burg:checked + .burg-img > span::before {
+  .nav__burg:checked + .nav__burg-img > span::before {
     transform: rotateZ(90deg);
     top: 0;
   }
-  #burg:checked + .burg-img > span::after {
+  .nav__burg:checked + .nav__burg-img > span::after {
     display: none;
   }
-  #burg:checked ~ .nav__list {
+  .nav__burg:checked ~ .nav__list {
     right: 0;
     bottom: 100%;
     height: 250px;
@@ -190,24 +206,21 @@ body {
     transform: scaleY(1);
     transition: width 0.4s, transform 0.4s;
   }
-  #burg:checked ~ .nav__list > .nav__item {
+  .nav__burg:checked ~ .nav__list > .nav__item {
     opacity: 1;
   }
-  #burg:checked ~ .nav__list a {
+  .nav__burg:checked ~ .nav__list a {
     display: inline-block;
     height: 42px;
   }
   &__logo {
-    font-family: "Josefin bold";
-    font-size: 24px;
+    @include textStyle($josefin-bold, $nav-logo, $white);
     text-transform: uppercase;
-    color: #fff;
   }
   &__list {
+    @extend %flexSpBw;
     width: 45%;
     list-style: none;
-    display: flex;
-    justify-content: space-between;
     @media screen and (max-width: $xl) {
       width: 55%;
     }
@@ -220,7 +233,6 @@ body {
       transform-origin: 0 100%;
       position: absolute;
       right: 0;
-      // bottom: 100%;
       flex-direction: column;
       background-color: rgba($color: $dark, $alpha: 0.95);
       text-align: center;
@@ -233,30 +245,43 @@ body {
       margin-bottom: 10px;
       opacity: 0;
       &::after {
-        content: "";
-        display: block;
+        @include pseudo();
         width: 40px;
         height: 1px;
-        background-color: #a08f8f;
-        position: absolute;
         bottom: 19px;
         left: 50%;
+        background-color: $underline-clr;
         transform: translateX(-50%);
       }
     }
   }
   &__item a {
-    font-family: "Aleo regular";
-    font-size: 14px;
-    color: #fff;
+    @include textStyle($josefin-reg, $menu-item, $white);
     text-transform: uppercase;
+    @media screen and (min-width: $md) {
+      &::before {
+        @include pseudo;
+        width: 35px;
+        height: 1px;
+        top: -8px;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+        background-color: $white;
+        transition: opacity 0.2s;
+      }
+      &:hover::before {
+        opacity: 1;
+      }
+    }
   }
 }
 
+//Choose section
+
 .choose {
-  @include media;
-  display: flex;
-  justify-content: space-between;
+  @extend %media;
+  @extend %flexSpBw;
   width: 100%;
   background: url(../img/choose_us-bg.jpg) 35% 50% no-repeat;
   background-size: cover;
@@ -267,12 +292,10 @@ body {
   }
   &__block-content {
     flex-basis: 48%;
-    padding-top: 4%;
   }
   &__block-img {
+    @extend %flexCol;
     flex-basis: 48%;
-    display: flex;
-    flex-direction: column;
     @media screen and (max-width: $md) {
       align-items: center;
     }
@@ -295,32 +318,37 @@ body {
   }
 }
 .block-content {
+  padding-top: 4%;
   @media screen and (max-width: $md) {
     text-align: center;
     margin-bottom: 9%;
   }
   &__title {
-    font-family: "Aleo regular", serif;
-    font-size: 36px;
-    color: #fff;
+    @include textStyle($aleo-reg, $title-serif, $white);
     font-weight: 400;
     margin-bottom: 60px;
     @media screen and (max-width: $md) {
       margin-bottom: 9%;
     }
+    @media screen and (max-width: $sm) {
+      font-size: 26px;
+    }
   }
   &__text {
-    @include textStyle;
+    @include textStyle($josefin-reg, $p-text, $text-clr);
     margin-bottom: 35px;
+    line-height: 1.5;
   }
   &__btn {
-    @include btn;
+    @extend %btn;
     width: 222px;
     height: 55px;
     margin-top: 10px;
   }
 }
 .user-actions {
+  @extend %flexSpBw;
+  align-items: center;
   padding-right: calc(50vw - 465px);
   padding-left: calc(50vw - 465px);
   position: relative;
@@ -328,9 +356,6 @@ body {
   background-image: url(../img/dashed.png);
   background-position: 49% 24%;
   background-repeat: no-repeat;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   height: 338px;
   @media screen and (max-width: $lg) {
     padding-right: calc(50vw - 410px);
@@ -350,11 +375,10 @@ body {
   }
 }
 .user-action {
-  display: flex;
+  @extend %flexCol;
+  align-items: center;
   position: relative;
   z-index: 2;
-  flex-direction: column;
-  align-items: center;
   background-color: $dark;
   @media screen and (max-width: $lg) {
     margin-bottom: 3%;
@@ -371,81 +395,82 @@ body {
     fill: $blue;
   }
   &__icon_red {
-    fill: #ff6363;
+    fill: $red-icon;
   }
   &__icon_blue {
-    fill: #00a2ff;
+    fill: $blue-icon;
   }
   &__title {
-    font-family: "Aleo regular", serif;
-    font-size: 36px;
-    color: #fff;
+    @include textStyle($aleo-reg, $title-serif, $white);
     font-weight: 400;
     @media screen and (max-width: $sm) {
       font-size: 26px;
     }
   }
 }
+//Booking section
+
 .booking {
-  @include media;
+  @extend %media;
   padding-top: 20%;
   padding-bottom: 10%;
+  &__block-content {
+    width: 49%;
+  }
 }
 .booking_theme_home {
   background: url(../img/spain-bg-1.jpg) 50% 50% no-repeat;
   background-size: cover;
 }
 .booking_theme_mountain {
-  background: url(../img/spain-bg-2.jpg) 50% 50% no-repeat;
-  background-size: cover;
   display: flex;
   justify-content: flex-end;
+  background: url(../img/spain-bg-2.jpg) 50% 50% no-repeat;
+  background-size: cover;
 }
 .booking-content {
-  background-color: rgba($color: $dark, $alpha: 0.8);
-  width: 49%;
   padding: 45px 25px;
+  background-color: rgba($color: $dark, $alpha: 0.8);
   @media screen and (max-width: $lg) {
     width: 100%;
     text-align: center;
   }
   &__suptitle {
-    font-family: "Josefin regular", sans-serif;
-    font-size: 20px;
-    color: $text-clr;
+    @include textStyle($josefin-reg, $title-sans, $suptitle-clr);
   }
   &__title {
-    font-family: "Josefin regular", sans-serif;
-    font-size: 20px;
-    color: $text-clr;
+    @include textStyle($josefin-reg, $title-sans, $suptitle-clr);
     font-weight: 400;
     text-transform: uppercase;
     margin: 25px 0 25px 0;
   }
   &__text {
-    @include textStyle;
+    @include textStyle($josefin-reg, $p-text, $text-clr);
     margin-bottom: 45px;
+    line-height: 1.5;
   }
   &__btn {
-    @include btn;
+    @extend %btn;
     width: 225px;
     height: 60px;
   }
 }
+// Tourist section
 
-.tourist-block {
-  @include media;
+.tourist-section {
+  @extend %media;
   background: url(../img/tourist-say-bg.jpg) 50% 50% no-repeat;
   background-size: cover;
   padding-top: 6%;
   padding-bottom: 10%;
   &__title {
-    font-family: "Aleo regular", serif;
-    font-size: 36px;
-    color: #fff;
+    @include textStyle($aleo-reg, $title-serif, $white);
     font-weight: 400;
     text-align: center;
     margin-bottom: 5%;
+    @media screen and (max-width: $sm) {
+      font-size: 26px;
+    }
   }
 }
 .tourist-info {
@@ -460,65 +485,58 @@ body {
   &__opinion {
     background-color: $dark;
     padding: 45px 55px;
+    @media screen and (max-width: $sm) {
+      padding: 3% 3%;
+    }
   }
   &__name {
-    font-family: "Josefin regular", sans-serif;
-    font-size: 20px;
-    color: $text-clr;
+    @include textStyle($josefin-reg, $title-sans, $suptitle-clr);
     font-weight: 400;
     text-transform: uppercase;
     margin-bottom: 40px;
   }
   &__quote {
-    @include textStyle;
+    @include textStyle($josefin-reg, $p-text, $text-clr);
     position: relative;
+    line-height: 1.5;
     text-indent: 30px;
-    // span {
-    //   font-size: 32px;
-    //   font-weight: 800;
-    //   color: $blue;
-    //   float: left;
-    // }
     &:before {
-      content: "\1F676";
+      @include pseudo("\1F676");
       font-size: 50px;
       color: $blue;
-      display: block;
-      position: absolute;
       top: -24px;
       left: -33px;
-      float: left;
     }
   }
 }
+
+//Footer
+
 .footer {
-  background-color: $dark;
-  display: flex;
-  flex-direction: column;
+  @extend %flexCol;
   align-items: center;
+  background-color: $dark;
   padding: 7% 0 3% 0;
   &__logo {
-    font-family: "Josefin bold";
-    font-size: 24px;
+    @include textStyle($josefin-bold, $nav-logo, $white);
     font-weight: 400;
     text-transform: uppercase;
-    color: #fff;
     letter-spacing: 1px;
     margin-bottom: 12px;
   }
   &__subtitle {
-    @include textStyle;
+    @include textStyle($josefin-reg, $p-text, $text-clr);
+    line-height: 1.5;
     margin-bottom: 20px;
   }
   &__social-icons {
+    @extend %flexSpBw;
     width: 160px;
-    display: flex;
-    justify-content: space-between;
   }
   &__social-icons svg {
     width: 15px;
     height: 15px;
-    fill: #fff;
+    fill: $white;
     &:hover {
       fill: $blue;
     }

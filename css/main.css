@@ -504,8 +504,8 @@ body {
   font-size: 22px;
   color: #fff;
   line-height: 1.5;
-  letter-spacing: 5px;
   text-align: center;
+  letter-spacing: 5px;
   margin-bottom: 50px;
 }
 
@@ -526,9 +526,6 @@ body {
   font-size: 14px;
   color: #fff;
   line-height: 1.5;
-  font-family: "Josefin regular";
-  font-size: 14px;
-  color: #fff;
 }
 
 .form {
@@ -587,24 +584,28 @@ body {
   font-family: "Josefin regular", sans-serif;
   font-size: 14px;
   color: #999999;
+  line-height: 1.5;
 }
 
 .form input:-ms-input-placeholder {
   font-family: "Josefin regular", sans-serif;
   font-size: 14px;
   color: #999999;
+  line-height: 1.5;
 }
 
 .form input::-ms-input-placeholder {
   font-family: "Josefin regular", sans-serif;
   font-size: 14px;
   color: #999999;
+  line-height: 1.5;
 }
 
 .form input::placeholder {
   font-family: "Josefin regular", sans-serif;
   font-size: 14px;
   color: #999999;
+  line-height: 1.5;
 }
 
 .form input:focus {
@@ -673,12 +674,6 @@ body {
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   cursor: pointer;
-}
-
-@media screen and (max-width: 400px) {
-  .nav .nav__burg-img {
-    right: 10px;
-  }
 }
 
 @media screen and (max-width: 768px) {
@@ -757,10 +752,10 @@ body {
   padding-bottom: 20px;
   -webkit-transform: scaleY(1);
           transform: scaleY(1);
-  -webkit-transition: width 0.4s, -webkit-transform 0.4s;
-  transition: width 0.4s, -webkit-transform 0.4s;
-  transition: width 0.4s, transform 0.4s;
-  transition: width 0.4s, transform 0.4s, -webkit-transform 0.4s;
+  -webkit-transition: -webkit-transform 0.4s;
+  transition: -webkit-transform 0.4s;
+  transition: transform 0.4s;
+  transition: transform 0.4s, -webkit-transform 0.4s;
 }
 
 .nav .nav__burg:checked ~ .nav__list > .nav__item {
@@ -816,9 +811,9 @@ body {
 }
 
 .nav__item {
+  position: relative;
   -webkit-transition: opacity 0.4s;
   transition: opacity 0.4s;
-  position: relative;
 }
 
 @media screen and (max-width: 768px) {
@@ -987,7 +982,6 @@ body {
           align-items: center;
   padding-right: calc(50vw - 465px);
   padding-left: calc(50vw - 465px);
-  position: relative;
   background-color: #232323;
   background-image: url(../img/dashed.png);
   background-position: 49% 24%;
@@ -1027,7 +1021,6 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  position: relative;
   z-index: 2;
   background-color: #232323;
 }
@@ -1128,7 +1121,7 @@ body {
   line-height: 1.5;
   font-weight: 400;
   text-transform: uppercase;
-  margin: 25px 0 25px 0;
+  margin: 25px 0;
 }
 
 .booking-content__text {

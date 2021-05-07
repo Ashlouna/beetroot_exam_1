@@ -41,8 +41,8 @@ body {
   }
   &__subtitle {
     @include textStyle($josefin-reg, $main-sub-title, $white);
-    letter-spacing: 5px;
     text-align: center;
+    letter-spacing: 5px;
     margin-bottom: 50px;
     @media screen and (max-width: $lg) {
       margin-bottom: 5%;
@@ -53,9 +53,6 @@ body {
   }
   &__scroll-link {
     @include textStyle($josefin-reg, $menu-item, $white);
-    font-family: "Josefin regular";
-    font-size: 14px;
-    color: $white;
   }
 }
 .form {
@@ -86,9 +83,7 @@ body {
     outline: none;
     overflow: hidden;
     &::placeholder {
-      font-family: "Josefin regular", sans-serif;
-      font-size: 14px;
-      color: $input-clr;
+      @include textStyle($josefin-reg, $menu-item, $input-clr);
     }
     &:focus {
       background-color: $input-focus-clr;
@@ -147,9 +142,6 @@ body {
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
-    @media screen and (max-width: $xs) {
-      right: 10px;
-    }
     @media screen and (max-width: $md) {
       right: calc(50vw - 240px);
     }
@@ -204,7 +196,7 @@ body {
     padding-top: 30px;
     padding-bottom: 20px;
     transform: scaleY(1);
-    transition: width 0.4s, transform 0.4s;
+    transition: transform 0.4s;
   }
   .nav__burg:checked ~ .nav__list > .nav__item {
     opacity: 1;
@@ -239,8 +231,8 @@ body {
     }
   }
   &__item {
-    transition: opacity 0.4s;
     position: relative;
+    transition: opacity 0.4s;
     @media screen and (max-width: $md) {
       margin-bottom: 10px;
       opacity: 0;
@@ -346,12 +338,14 @@ body {
     margin-top: 10px;
   }
 }
+
+//User actions section
+
 .user-actions {
   @extend %flexSpBw;
   align-items: center;
   padding-right: calc(50vw - 465px);
   padding-left: calc(50vw - 465px);
-  position: relative;
   background-color: $dark;
   background-image: url(../img/dashed.png);
   background-position: 49% 24%;
@@ -377,7 +371,6 @@ body {
 .user-action {
   @extend %flexCol;
   align-items: center;
-  position: relative;
   z-index: 2;
   background-color: $dark;
   @media screen and (max-width: $lg) {
@@ -408,6 +401,7 @@ body {
     }
   }
 }
+
 //Booking section
 
 .booking {
@@ -442,7 +436,7 @@ body {
     @include textStyle($josefin-reg, $title-sans, $suptitle-clr);
     font-weight: 400;
     text-transform: uppercase;
-    margin: 25px 0 25px 0;
+    margin: 25px 0;
   }
   &__text {
     @include textStyle($josefin-reg, $p-text, $text-clr);

@@ -83,7 +83,9 @@ body {
     outline: none;
     overflow: hidden;
     &::placeholder {
-      @include textStyle($josefin-reg, $menu-item, $input-clr);
+      font-family: $josefin-reg;
+      font-size: $menu-item;
+      color: $input-clr;
     }
     &:focus {
       background-color: $input-focus-clr;
